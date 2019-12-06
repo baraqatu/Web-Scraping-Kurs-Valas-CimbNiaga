@@ -3,11 +3,111 @@
   <head>
     <meta charset="utf-8">
     <title>Web Scraping and Visualization | H13116502</title>
-    <link rel="stylesheet" href="assets/css/bootstrap-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
   </head>
   <body>
     <div class="container">
-      <h2>Kurs Valas - Bank Cimb Niaga</h2>
+      <h3 class="mb-3 mt-3">Kurs Valas - Bank Cimb Niaga</h3>
+      <p>Nama : Abdul Aziz Mubarak
+        <br>Nim : H13116502
+      </p>
+      <table class="table table-boredered table-striped table-hover">
+        <thead>
+          <tr>
+            <th>{{country[0]}}</th>
+            <th>{{buy[0]}}</th>
+            <th>{{sell[0]}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{country[1]}}</td><td>{{buy[1]}}</td><td>{{sell[1]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[2]}}</td><td>{{buy[2]}}</td><td>{{sell[2]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[3]}}</td><td>{{buy[3]}}</td><td>{{sell[3]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[4]}}</td><td>{{buy[4]}}</td><td>{{sell[4]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[5]}}</td><td>{{buy[5]}}</td><td>{{sell[5]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[6]}}</td><td>{{buy[6]}}</td><td>{{sell[6]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[7]}}</td><td>{{buy[7]}}</td><td>{{sell[7]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[8]}}</td><td>{{buy[8]}}</td><td>{{sell[8]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[9]}}</td><td>{{buy[9]}}</td><td>{{sell[9]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[10]}}</td><td>{{buy[10]}}</td><td>{{sell[10]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[11]}}</td><td>{{buy[11]}}</td><td>{{sell[11]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[12]}}</td><td>{{buy[12]}}</td><td>{{sell[12]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[13]}}</td><td>{{buy[13]}}</td><td>{{sell[13]}}</td>
+          </tr>
+          <tr>
+            <td>{{country[14]}}</td><td>{{buy[14]}}</td><td>{{sell[14]}}</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
+
+    <div class="container mt-3 mb-3">
+      <canvas id="barChart" width="150vh" height="50vh"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('barChart');
+        var barChart = new Chart(ctx, {
+          type: 'bar',
+          data:{
+            labels: ['USD', 'SGD', 'THB', 'AUD', 'CAD', 'CHF', 'CNY', 'EUR', 'GBP', 'HKD', 'JPY', 'MYR', 'NZD', 'SAR'],
+            datasets: [{
+              label: "Harga Beli",
+              backgroundColor: "#B22222",
+              borderColor: "lightred",
+              borderWidth: 1,
+              data: [{{buy[1]}}, {{buy[2]}}, {{buy[3]}}, {{buy[4]}}, {{buy[5]}}, {{buy[6]}}, {{buy[7]}}, {{buy[8]}}, {{buy[9]}}, {{buy[10]}}, {{buy[11]}}, {{buy[12]}}, {{buy[13]}}, {{buy[14]}}]
+            },{
+              label: "Harga Jual",
+              backgroundColor: "#87CEFA",
+              borderColor: "lightgreen",
+              borderWidth: 1,
+              data: [{{sell[1]}}, {{sell[2]}}, {{sell[3]}}, {{sell[4]}}, {{sell[5]}}, {{sell[6]}}, {{sell[7]}}, {{sell[8]}}, {{sell[9]}}, {{sell[10]}}, {{sell[11]}}, {{sell[12]}}, {{sell[13]}}, {{sell[14]}}]
+            }]
+          },
+          option:{
+            scales:{
+              yAxes:[{
+                ticks:{
+                  beginAtZero: true
+                }]
+              }
+            }
+          }
+        });
+      </script>
+    </div>
+
+    <!-- JS Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
   </body>
 </html>
